@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/custom.js"></script>
+    </head>
+    <body onload="start()">
+        <section> 
+            <div class="container">
+                <ul class="list-group" id="students">
+                <li class="list-group-item bg-success text-light"><a>Mamatha</a></li>
+                <li class="list-group-item bg-success text-light "><a>Murali</a></li>
+                <li class="list-group-item bg-success text-light "><a>Indraja</a></li>
+                <li class="list-group-item bg-success text-light "><a>Rachana</a></li>
+                <li class="list-group-item bg-success text-light "><a>Harshita</a></li>
+                </ul>
+                <h3 id="mytext"></h3>
+                <h3 id="total"></h3>
+                <h3 id="absent"></h3>
+            </div>
+        </section>
+        <script>
+            function start()
+            {
+                ob=[];
+            }  
+            
+            var mystudents = document.querySelectorAll("ul li");
+            document.getElementById("total").innerHTML = "TOTAL NUM OF STUDENTS ="+mystudents.length;
+            mystudents.forEach(function(item)
+            {
+            
+                item.onclick = function(e)
+                {   
+                    this.classList.add("bg-danger");
+                    ob.push(this.innerText)
+                    set1 = new Set(ob)
+
+                    document.getElementById("absent").innerHTML= "No of absentees = "+ set1.size;
+                    var ob1 = Array.from(set1)
+                    document.getElementById("mytext").innerHTML = "Absentees are = "+ ob1;
+                }
+            
+            });
+        </script>
+    </body>
+</html>

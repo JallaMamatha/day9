@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+    
+    </head>
+    <body>
+        <section class="container">
+
+        <div id="click" class="bg-dark text-light">see the magic</div>
+        <div id="content" class="bg-success"> 
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+             It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
+           </p>
+           <button id="hide" class="btn btn-warning">hide me</button>
+           </div>
+           </section>
+           <style>
+               #content{
+                   display:none
+               }
+           </style>
+           <script>
+               $(document).ready(function()
+               {
+                   $("#click").click(function()
+                   {
+                       $("#content").slideDown("slow");
+
+                   });
+                   $("#hide").click(function()
+                   {
+                       $("#content").slideUp("slow");
+
+                   });
+
+               });
+           </script>
+           
+       
+      </body>
+     </html>  
